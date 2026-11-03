@@ -1,3 +1,7 @@
 .presentation-frame{position:fixed;inset:0;width:100dvw;height:100dvh;border:0;z-index:2147483647;background:#071826}
-@media(orientation:portrait){.presentation-frame.landscape{inset:0 auto auto 100dvw;width:100dvh;height:100dvw;transform-origin:top left;transform:rotate(90deg)}}
+ .presentation-frame{transform-origin:top left;right:auto;bottom:auto}
 @media(max-width:1000px){.topbar .brand{display:none}.nav-actions{margin:auto;flex-wrap:wrap;justify-content:center}.nav-actions button{padding:5px!important;font-size:11px!important}}
+.fit-presentation .slide.active{height:var(--fit-height,100dvh);animation:none!important;transform:scale(var(--fit-scale,1))!important;transform-origin:center var(--fit-anchor,62px)}
+.fit-presentation .slide.active[style*="--fit-height"]{height:var(--fit-height)!important;overflow:hidden!important}
+.fit-presentation .metrics-panel{max-height:none!important;overflow:visible!important}
+.fit-presentation .investment-redesign.active{height:calc(100dvh - 62px)}
