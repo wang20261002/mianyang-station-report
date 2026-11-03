@@ -1,0 +1,277 @@
+/* Full-deck reading-first redesign layer. The existing deck remains the source of truth. */
+.redesign-page{overflow:hidden!important}.redesign-page .section-head{max-width:none;margin-bottom:14px}.redesign-page .section-head h2{font-size:clamp(28px,3vw,44px)}
+.redesign-page .section-head p:not(.eyebrow){max-width:1180px;line-height:1.55;margin:0}
+.cover-redesign{padding:0!important;background:#081c2c url("../assets/cover-art-screen.webp") center/cover no-repeat!important;color:#f6fbfd!important;align-items:stretch!important}.cover-redesign.active{display:flex!important}.cover-redesign:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,22,35,.94) 0%,rgba(4,22,35,.72) 43%,rgba(4,22,35,.08) 100%);pointer-events:none}.cover-redesign .cover-content{width:100%;max-width:none;margin:0;padding:15vh 9vw 7vh;z-index:1;display:flex;flex-direction:column;justify-content:center}.cover-redesign h1{font-size:clamp(38px,5.2vw,76px);line-height:1.04;max-width:920px;margin:20px 0}.cover-redesign h1 span,.cover-redesign h1 small{display:block}.cover-redesign .cover-content>p{position:absolute;bottom:28px;left:9vw;margin:0;color:#b9d4df;font-size:14px;letter-spacing:.08em}.cover-redesign .cover-rule{width:130px;height:5px;background:#55d7e6;margin-bottom:12px}.cover-redesign .cover-lock{position:absolute;right:8vw;bottom:30px;color:#d1e9ee;font-size:12px;letter-spacing:.12em}
+.location-redesign .section-head{max-width:630px}.location-redesign .location-analysis-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:18px;align-items:stretch}.location-redesign .location-sequence{min-height:55vh}.location-redesign .planning-boundary-panel{min-height:55vh}.location-redesign .sequence-steps{margin-top:10px}.location-redesign .planning-boundary-panel img{height:100%;object-fit:contain}.location-redesign .planning-land-description{max-width:630px;font-size:13px;line-height:1.6}
+.city-redesign .terrain-model{height:calc(100vh - 220px);min-height:500px}.city-redesign .terrain-toggles{top:auto;bottom:14px;left:50%;transform:translateX(-50%);background:rgba(7,24,38,.86);padding:6px;border:1px solid #2e6980;border-radius:8px}.city-redesign .road-callouts{position:absolute;left:7vw;right:7vw;bottom:86px;z-index:4}.city-redesign .source-note{display:none}
+.terrain-redesign .terrain-model{height:calc(100vh - 260px);min-height:440px}.terrain-redesign .terrain-toggles button[data-tool="query"],.terrain-redesign .terrain-toggles button[data-tool="section"]{display:none}.terrain-redesign .terrain-toggles{bottom:14px;top:auto}.terrain-redesign .terrain-conclusion{position:absolute;right:7vw;bottom:86px;max-width:370px;padding:14px 18px;background:rgba(7,24,38,.9);border-left:4px solid #5ed8e7;color:#e7f8fb;font-size:13px;line-height:1.55}
+.planning-redesign .condition-compare{grid-template-columns:1fr 1fr;gap:0 16px;max-height:none}.planning-redesign .condition-compare>div:nth-of-type(n+5){opacity:.48;font-size:12px}.planning-redesign .condition-priority{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.planning-redesign .condition-priority article{padding:13px;background:#113a50;border-top:3px solid #58d7e4;color:#eaf8fa}.planning-redesign .condition-priority b{font-size:13px}.planning-redesign .condition-priority span{display:block;margin-top:5px;font-size:12px;color:#b7d3dc}
+.model-redesign .model-layout{grid-template-columns:1fr 310px}.model-redesign .model-stack .real-model{height:calc(100vh - 250px);min-height:510px}.model-redesign .model-info{height:100%;min-height:0}.model-redesign .model-conclusions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.model-redesign .model-conclusions span{padding:10px;background:#123a50;border-left:3px solid #5ed8e7;color:#d5edf2;font-size:12px;line-height:1.45}
+.concept-redesign .scheme2-concept-crop{display:grid;grid-template-columns:1.8fr 1fr;grid-template-rows:1fr 1fr;gap:10px;aspect-ratio:auto;max-height:calc(100vh - 245px);overflow:hidden;background:#fff}.concept-redesign .scheme2-concept-crop img{grid-row:1/-1;width:100%;height:100%;object-fit:cover;object-position:left center}.concept-redesign .concept-detail{min-height:0;overflow:hidden;background:#fff}.concept-redesign .concept-detail img{width:100%;height:100%;object-fit:cover}.concept-redesign .concept-caption{display:flex;gap:12px;margin-top:10px}.concept-redesign .concept-caption span{padding:8px 12px;background:#123a50;color:#d9f2f5;font-size:12px}
+.plan-redesign .plan-layout{grid-template-columns:175px 1fr}.plan-redesign .plan-wrap{max-height:67vh}.plan-redesign .plan-wrap img{max-height:67vh}.plan-redesign .plan-legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px;color:#34576a;font-size:12px}.plan-redesign .plan-legend span{padding:6px 9px;background:#e8f6f7;border-left:3px solid #1c94a8}
+.effect-redesign .effect-caption{left:7vw;bottom:26px;font-size:14px}.effect-redesign .effect-caption:after{content:""}.effect-redesign .effect-tags{position:absolute;left:7vw;bottom:74px;display:flex;gap:8px}.effect-redesign .effect-tags span{padding:7px 11px;background:rgba(5,22,34,.76);border-left:3px solid #5ed8e7;color:#fff;font-size:12px}
+.night-redesign .night-callouts{position:absolute;left:7vw;bottom:74px;display:flex;gap:10px}.night-redesign .night-callouts span{padding:8px 11px;background:rgba(5,22,34,.78);color:#fff;border-left:3px solid #f3b544;font-size:12px}
+.story-redesign .storyboard-note{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.story-redesign .storyboard-note span{padding:9px 10px;background:#123a50;color:#e5f7fa;font-size:12px;line-height:1.45}.story-redesign .storyboard-note b{display:block;color:#ffd063;margin-bottom:3px}
+.analysis-static-redesign .analysis-interactive{pointer-events:none}.analysis-static-redesign .analysis-focus-note{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}.analysis-static-redesign .analysis-focus-note span{padding:10px;background:#123a50;border-left:3px solid #56d6e2;color:#dff5f7;font-size:12px}
+.traffic-static-redesign .traffic-note{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.traffic-static-redesign .traffic-note span{padding:9px;background:#123a50;color:#e3f8fb;font-size:12px;border-top:3px solid #56d6e2}
+.scheme2-model-redesign .model-conclusions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.scheme2-model-redesign .model-conclusions span{padding:9px 10px;background:#123a50;color:#e2f6f8;border-left:3px solid #5ed8e7;font-size:12px;line-height:1.45}
+.kpi-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:0 0 14px}.kpi-strip div{background:#eaf5f7;border-top:3px solid #1c94a8;padding:10px 12px}.kpi-strip b,.kpi-strip span{display:block}.kpi-strip b{font-size:12px;color:#276878}.kpi-strip span{font-size:19px;font-weight:700;color:#0d3449;margin-top:4px}
+.cost-redesign .cost-toolbar,.cost-redesign .cost-controls{display:none}.cost-redesign .cost-layout{grid-template-columns:1fr}.cost-redesign .cost-total{border-left:0;padding-left:0}.cost-redesign .cost-decision-map{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}.cost-redesign .cost-decision-map article{padding:12px;background:#123a50;border-top:3px solid #5ed8e7;color:#e5f7fa}.cost-redesign .cost-decision-map b{font-size:13px;display:block}.cost-redesign .cost-decision-map span{display:block;font-size:12px;line-height:1.5;margin-top:5px;color:#bcd7df}
+.policy-redesign .carbon-policy-grid{grid-template-columns:1fr 1fr}.policy-redesign .carbon-focus{grid-column:1/-1;border:2px solid #f0b74d!important;background:#fffbe9!important}.policy-redesign .status-banner{padding:14px 18px;background:#f0b74d;color:#3d2b08;font-weight:700;font-size:16px;margin-bottom:12px}
+.boundary-redesign .carbon-boundary-visuals{grid-template-columns:1.25fr .87fr .87fr}.boundary-redesign .carbon-boundary-visuals figure:first-child{grid-row:span 2}.boundary-redesign .lifecycle-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.boundary-redesign .lifecycle-steps span{padding:10px;background:#123a50;color:#e5f7fa;font-size:12px;border-top:3px solid #5ed8e7}
+.case-redesign .carbon-case-grid article{display:flex;flex-direction:column}.case-redesign .carbon-case-grid .carbon-source{margin-top:auto}.studio-redesign .studio-case-grid article>div{min-height:145px}.studio-redesign .ability-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.studio-redesign .ability-tags span{font-size:11px;padding:5px 7px;background:#e4f4f3;color:#256c69;border-radius:2px}
+.measure-redesign .measure-card ul li:nth-child(n+3){display:none}.measure-redesign .measure-images{grid-template-columns:1fr 1fr}.measure-redesign .measure-images img{height:23vh}
+.strategy-redesign .carbon-evaluation{grid-template-columns:repeat(4,1fr)}.strategy-redesign .carbon-evaluation article:nth-child(n+5){grid-column:span 2}.strategy-redesign .carbon-evaluation article:nth-child(n+5){border-top:3px solid #f0b74d}.strategy-redesign .strategy-band{padding:12px 16px;margin-top:12px;background:#123a50;color:#e7f7fa;font-size:14px}
+.carbon-plan-redesign .carbon-plan-layout{grid-template-columns:minmax(0,2.4fr) minmax(310px,1fr)}.carbon-plan-redesign .carbon-plan-image{min-height:58vh}.carbon-plan-redesign .carbon-plan-image img{width:100%;height:100%;object-fit:contain}.carbon-plan-redesign .carbon-map-notes{display:grid;grid-template-columns:1fr 1fr;gap:8px}.carbon-plan-redesign .carbon-map-notes li{font-size:12px;padding:9px;background:#123a50;color:#e7f7fa}
+.capability-redesign .capability-images img:nth-child(n+3){display:none}.capability-redesign .capability-images{grid-template-columns:1.4fr 1fr;grid-template-rows:repeat(2,130px)}
+.conclusion-redesign .conclusion-grid{grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}.conclusion-redesign .conclusion-grid div:nth-child(4){grid-column:1/-1;background:#123a50;color:#e8f8fa;border-left-color:#f0b74d;padding:14px}.conclusion-redesign .conclusion-grid div:nth-child(4) p{color:#d9eef2;margin:4px 0 0}.conclusion-redesign .footer-mark{bottom:30px}
+.hs-intro-redesign .hs-intro-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}.hs-intro-redesign .hs-intro-rail img{max-height:67vh}.hs-intro-redesign .hs-intro-foot{margin-top:12px}.hs-plan-redesign .hs-ppt-page{height:55vh}.hs-plan-redesign .hs-integrated-note{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.hs-plan-redesign .hs-integrated-note span{padding:11px;background:#123a50;color:#e9f7f9;font-size:12px;line-height:1.5}.hs-flow-redesign .hs-flow-legend{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.hs-flow-redesign .hs-flow-legend span{padding:10px;background:#123a50;color:#e8f8fa;border-top:3px solid #5ed8e7;font-size:12px}.hs-scene-redesign .hs-scene-grid{position:relative}.hs-scene-redesign .hs-scene-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.hs-scene-redesign .hs-scene-flow span{padding:8px 10px;background:#123a50;color:#e8f8fa;font-size:12px;text-align:center}.hs-scene-redesign .hs-scene-flow span:not(:last-child):after{content:"→";float:right;color:#f0b74d}
+@media(max-width:1000px){.kpi-strip,.cost-redesign .cost-decision-map,.analysis-static-redesign .analysis-focus-note,.traffic-static-redesign .traffic-note,.scheme2-model-redesign .model-conclusions,.lifecycle-steps,.hs-flow-legend,.hs-scene-flow{grid-template-columns:repeat(2,1fr)}.planning-redesign .condition-priority,.strategy-redesign .carbon-evaluation,.conclusion-redesign .conclusion-grid{grid-template-columns:1fr 1fr}.carbon-plan-redesign .carbon-plan-layout,.location-redesign .location-analysis-layout{grid-template-columns:1fr}}
+/* Final cover and scheme-two plan detail callouts. */
+.back-cover-redesign .effect-full img{object-fit:cover;transform:scale(1.06)}
+.plan-detail-strip{position:absolute;right:30px;bottom:26px;display:grid;grid-template-columns:repeat(2,180px);gap:8px;z-index:3}.plan-detail-strip figure{margin:0;background:rgba(5,22,34,.86);border:1px solid rgba(120,225,235,.55);padding:5px}.plan-detail-strip img{display:block;width:100%;height:72px;object-fit:cover;object-position:center}.plan-detail-strip figure:first-child img{object-position:left top}.plan-detail-strip figure:nth-child(2) img{object-position:right bottom}.plan-detail-strip figcaption{font-size:10px;color:#e9f8fa;line-height:1.3;margin-top:4px}
+
+/* Repair pass 20261019: keep the full source drawings and restore the cost controls. */
+.analysis-static-redesign .analysis-interactive,
+.traffic-static-redesign .analysis-interactive{height:clamp(380px,calc(100vh - 215px),520px);max-height:none;overflow:hidden;background:#fff}
+.analysis-static-redesign .analysis-interactive>img,
+.traffic-static-redesign .analysis-interactive>img{width:100%;height:100%;object-fit:contain;background:#fff;display:block}
+.analysis-static-redesign .analysis-focus-note,
+.traffic-static-redesign .traffic-note{margin-top:8px}
+.hs-plan-redesign .hs-ppt-page,
+.hs-flow-redesign .hs-ppt-page{height:clamp(430px,calc(100vh - 290px),560px);aspect-ratio:16/9;background:#fff}
+.hs-plan-redesign .hs-ppt-page img,
+.hs-flow-redesign .hs-ppt-page img{object-fit:cover}
+.cost-redesign .cost-toolbar,.cost-redesign .cost-controls{display:block}
+.cost-redesign .cost-layout{grid-template-columns:minmax(0,1.18fr) minmax(360px,.82fr);gap:18px;max-height:calc(100vh - 310px);overflow:auto;padding-right:6px}
+.cost-redesign .cost-controls{display:grid;gap:8px}
+.cost-redesign .cost-row{grid-template-columns:155px minmax(120px,1fr) 92px;gap:9px;align-items:center}
+.cost-redesign .cost-row input[type=range]{display:block;width:100%;height:18px;accent-color:var(--cyan);cursor:pointer}
+.cost-redesign .cost-row output{display:block}
+.cost-redesign .cost-total{border-left:1px solid #2c5c71;padding-left:18px}
+.cost-redesign .cost-decision-map{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:14px}
+.cost-redesign .cost-bars{margin-top:14px}
+.closing-redesign{padding:0!important;background:linear-gradient(135deg,#0b2034,#123d52)!important;color:#eaf8fa!important;display:none;align-items:center;justify-content:center}
+.closing-redesign.active{display:flex!important}
+.closing-inner{width:min(1080px,84vw);padding:6vh 0}
+.closing-inner .eyebrow{color:#5ed8e7}
+.closing-inner h2{font-size:clamp(38px,5vw,72px);line-height:1.04;margin:18px 0 32px;letter-spacing:-.04em}
+.closing-inner h2 span{color:#a9d8df;font-weight:400}
+.closing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.closing-grid article{padding:16px;background:#123a50;border-top:3px solid #5ed8e7}
+.closing-grid b{display:block;font-size:16px;color:#fff;margin-bottom:8px}
+.closing-grid span{display:block;color:#c9e3e8;font-size:13px;line-height:1.55}
+.closing-credit{margin-top:44px;padding-top:16px;border-top:1px solid rgba(255,255,255,.25);color:#a9c8d0;font-size:12px;letter-spacing:.08em}
+@media(max-width:1000px){.closing-grid{grid-template-columns:repeat(2,1fr)}.cost-redesign .cost-layout{grid-template-columns:1fr}.cost-redesign .cost-total{border-left:0;border-top:1px solid #2c5c71;padding:14px 0 0}}
+
+/* Fit analysis drawings beneath the fixed header at 16:9 viewport. */
+.analysis-static-redesign .analysis-interactive,
+.traffic-static-redesign .analysis-interactive{height:clamp(360px,calc(100vh - 250px),460px)}
+
+/* Keep high-security drawings and their captions inside one viewport. */
+.hs-plan-redesign,.hs-flow-redesign{padding-bottom:12px}
+.hs-plan-redesign .hs-ppt-page,.hs-flow-redesign .hs-ppt-page{height:clamp(330px,calc(100vh - 330px),390px)}
+.hs-plan-redesign .hs-integrated-note{margin-top:8px}
+.hs-plan-redesign .hs-integrated-note span{padding:8px;font-size:11px;line-height:1.35}
+
+/* Leave room for the three/four explanatory notes below the analysis image. */
+.analysis-static-redesign .analysis-interactive,
+.traffic-static-redesign .analysis-interactive{height:clamp(320px,calc(100vh - 350px),370px)}
+.analysis-static-redesign,.traffic-static-redesign{padding-bottom:0}
+
+/* Repair pass 20261019-2: final viewport and interaction corrections. */
+.cover-redesign h1{font-size:clamp(38px,4vw,66px);max-width:min(1200px,72vw);word-break:keep-all}
+.cover-redesign h1 span,.cover-redesign h1 small{white-space:nowrap}
+.terrain-redesign .terrain-toggles{top:12px;bottom:auto;left:12px;transform:none}
+.terrain-redesign .terrain-toggles button[data-tool="query"],.terrain-redesign .terrain-toggles button[data-tool="section"]{display:inline-block}
+.terrain-redesign .terrain-legends{left:12px;right:auto;bottom:12px}
+.concept-redesign .scheme2-concept-crop{display:block;height:clamp(390px,calc(100vh - 245px),520px);max-height:none;aspect-ratio:auto;overflow:hidden;background:#fff}
+.concept-redesign .scheme2-concept-crop img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:#fff}
+.concept-redesign .scheme2-concept-crop .concept-detail,.concept-redesign .concept-caption{display:none}
+.analysis-static-redesign .analysis-interactive,.traffic-static-redesign .analysis-interactive{height:clamp(360px,calc(100vh - 290px),430px)}
+.analysis-static-redesign .analysis-interactive>img,.traffic-static-redesign .analysis-interactive>img{object-fit:cover}
+.hs-plan-redesign,.hs-flow-redesign{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(250px,.75fr);grid-template-areas:"head head" "drawing notes";column-gap:18px;align-content:start}
+.hs-plan-redesign .section-head,.hs-flow-redesign .section-head{grid-area:head}
+.hs-plan-redesign .hs-ppt-page,.hs-flow-redesign .hs-ppt-page{grid-area:drawing;width:auto;height:clamp(330px,calc(100vh - 330px),390px);aspect-ratio:auto;display:flex;align-items:center;justify-content:center;background:#123a50}
+.hs-plan-redesign .hs-ppt-page img,.hs-flow-redesign .hs-ppt-page img{width:100%;height:100%;object-fit:contain}
+.hs-plan-redesign .hs-integrated-note,.hs-flow-redesign .hs-flow-legend{grid-area:notes;display:grid;grid-template-columns:1fr;align-content:center;gap:8px;margin:0}
+.hs-plan-redesign .hs-integrated-note span,.hs-flow-redesign .hs-flow-legend span{padding:10px;font-size:12px;line-height:1.45}
+.cost-redesign .combined-rate-details{display:block;margin:8px 0 10px;padding:8px 12px;background:#123a50;border-left:3px solid #5ed8e7;color:#e8f8fa}
+.cost-redesign .combined-rate-details summary{cursor:pointer;color:#fff;font-size:13px;font-weight:700}
+.measure-redesign .measure-digital-merge{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;margin:10px 0;padding:8px 12px;background:#123a50;color:#e8f8fa;border-left:4px solid #5ed8e7}
+.measure-redesign .measure-digital-merge img{display:block;width:150px;height:62px;object-fit:cover;background:#fff}
+.measure-redesign .measure-digital-merge b{display:block;color:#ffd063;font-size:13px;margin-bottom:4px}
+.measure-redesign .measure-digital-merge span{display:block;font-size:12px;line-height:1.5}
+.closing-inner h2{font-size:clamp(34px,4vw,62px)}
+.closing-inner h2 span{white-space:nowrap}
+.closing-grid span{word-break:keep-all}
+.closing-thumbnail{position:absolute;right:8vw;bottom:28px;width:150px;height:84px;object-fit:cover;opacity:.82;border:1px solid rgba(255,255,255,.35)}
+@media(max-width:1000px){.hs-plan-redesign,.hs-flow-redesign{display:block}.hs-plan-redesign .hs-integrated-note,.hs-flow-redesign .hs-flow-legend{margin-top:8px;grid-template-columns:repeat(3,1fr)}.closing-thumbnail{position:static;display:block;margin:20px 0 0;width:150px;height:84px}}
+.slide.hs-plan-redesign.active,.slide.hs-flow-redesign.active{display:grid!important}
+.slide.hs-plan-redesign,.slide.hs-flow-redesign{display:none}
+.slide.hs-plan-redesign.active,.slide.hs-flow-redesign.active{display:grid!important}
+.capability-redesign .capability-digital-images img{display:none!important}
+.capability-redesign .capability-digital-images img:first-child{display:block!important}
+
+/* Final no-crop layout for scheme-two function and traffic drawings. */
+.slide.analysis-static-redesign,.slide.traffic-static-redesign{display:none}
+.slide.analysis-static-redesign.active,.slide.traffic-static-redesign.active{display:grid!important;grid-template-columns:minmax(0,1.55fr) minmax(250px,.75fr);grid-template-areas:"head head" "drawing notes";column-gap:18px;align-content:start}
+.analysis-static-redesign .section-head,.traffic-static-redesign .section-head{grid-area:head}
+.analysis-static-redesign .analysis-interactive,.traffic-static-redesign .analysis-interactive{grid-area:drawing;width:auto;height:clamp(330px,calc(100vh - 330px),390px);display:flex;align-items:center;justify-content:center;background:#fff;overflow:hidden}
+.analysis-static-redesign .analysis-interactive>img,.traffic-static-redesign .analysis-interactive>img{width:100%;height:100%;object-fit:contain;background:#fff}
+.analysis-static-redesign .analysis-focus-note,.traffic-static-redesign .traffic-note{grid-area:notes;display:grid;grid-template-columns:1fr;align-content:center;gap:8px;margin:0}
+.analysis-static-redesign .analysis-focus-note span,.traffic-static-redesign .traffic-note span{padding:10px;background:#123a50;color:#e3f8fb;font-size:12px;line-height:1.45;border-left:3px solid #56d6e2}
+@media(max-width:1000px){.slide.analysis-static-redesign.active,.slide.traffic-static-redesign.active{display:block!important}.analysis-static-redesign .analysis-focus-note,.traffic-static-redesign .traffic-note{grid-template-columns:repeat(2,1fr);margin-top:8px}}
+
+/* Repair pass 20261019-3: enlarge analysis drawings and keep investment data in view. */
+.metrics-redesign .kpi-strip{display:none!important}
+.metrics-redesign{padding:88px 4vw 24px!important}
+.metrics-redesign .section-head{margin-bottom:8px}
+.metrics-redesign .metrics-panel{height:calc(100vh - 226px);max-height:none!important;overflow:auto;padding:0 4px 14px}
+.metrics-redesign .metrics-table-wrap{margin-bottom:10px}
+.metrics-redesign .metrics-panel .economic-table{font-size:12px}
+.metrics-redesign .metrics-panel .economic-table td{padding:6px 9px;line-height:1.3}
+.metrics-redesign .metrics-panel h3{margin:8px 0 6px}
+
+.slide.analysis-static-redesign.active,.slide.traffic-static-redesign.active{display:grid!important;grid-template-columns:minmax(0,1fr) 260px;grid-template-areas:"head head" "drawing notes";column-gap:16px;row-gap:10px;align-content:start;padding:88px 4vw 24px!important}
+.analysis-static-redesign .section-head,.traffic-static-redesign .section-head{grid-area:head;margin-bottom:0}
+.analysis-static-redesign .section-head h2,.traffic-static-redesign .section-head h2{font-size:clamp(28px,3vw,42px);margin:6px 0 8px}
+.analysis-static-redesign .analysis-interactive,.traffic-static-redesign .analysis-interactive{grid-area:drawing;width:auto;height:calc(100vh - 220px);min-height:420px;max-height:none;display:flex;align-items:center;justify-content:center;background:#fff;overflow:hidden}
+.analysis-static-redesign .analysis-interactive>img,.traffic-static-redesign .analysis-interactive>img{width:100%;height:100%;object-fit:contain;background:#fff}
+.analysis-static-redesign .analysis-focus-note,.traffic-static-redesign .traffic-note{grid-area:notes;display:grid;grid-template-columns:1fr;align-content:center;gap:8px;margin:0}
+.analysis-static-redesign .analysis-focus-note span,.traffic-static-redesign .traffic-note span{padding:10px;background:#123a50;color:#e3f8fb;font-size:12px;line-height:1.45;border-left:3px solid #56d6e2}
+
+.cost-redesign{padding:86px 4vw 18px!important}
+.cost-redesign .section-head{margin-bottom:6px}
+.cost-redesign .cost-toolbar{margin-bottom:5px}
+.cost-redesign .cost-layout{max-height:none!important;overflow:visible!important;grid-template-columns:minmax(0,1.2fr) minmax(360px,.8fr);gap:14px}
+.cost-redesign .cost-controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 12px;align-content:start}
+.cost-redesign .cost-row{grid-template-columns:minmax(105px,.9fr) minmax(75px,1fr) 66px;gap:6px}
+.cost-redesign .cost-row label{font-size:10px;line-height:1.1}
+.cost-redesign .cost-row small{font-size:8px;line-height:1.1}
+.cost-redesign .cost-row input[type=range]{height:12px}
+.cost-redesign .cost-total{min-width:0;padding-left:14px}
+.cost-redesign .cost-total strong{font-size:44px;margin:4px 0}
+.cost-redesign .cost-detail{font-size:10px;line-height:1.35;margin:4px 0}
+.cost-redesign .cost-bars{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;margin-top:8px}
+.cost-redesign .bar{grid-template-columns:minmax(0,1.3fr) minmax(30px,1fr) 65px;gap:4px;font-size:10px}
+.cost-redesign .cost-scope-note{font-size:10px;line-height:1.3;margin-top:6px}
+
+.measure-redesign .measure-digital-merge{display:none!important}
+.measure-redesign .measure-card:first-child .measure-pv-images{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.measure-redesign .measure-card:first-child .measure-pv-images img{height:16vh;min-height:92px;object-fit:cover}
+.measure-redesign .measure-card .measure-images img.zoomable-card{cursor:zoom-in}
+
+.pv-center-case-redesign{padding:88px 5vw 30px!important;background:linear-gradient(135deg,#f5fbfa,#e7f1f0)!important;color:#143d45!important}
+.pv-center-case-redesign .section-head{margin-bottom:14px}
+.pv-center-case-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(280px,.7fr);gap:22px;align-items:center}
+.pv-center-case-layout figure{margin:0;background:#fff;border:1px solid #b8d6d1;padding:10px;box-shadow:0 10px 28px rgba(21,77,79,.12)}
+.pv-center-case-layout figure img{display:block;width:100%;height:calc(100vh - 270px);min-height:350px;object-fit:cover}
+.pv-center-case-layout figcaption{padding:9px 4px 2px;color:#2d6d6c;font-size:13px}
+.pv-center-case-notes{display:grid;gap:10px}
+.pv-center-case-notes b{font-size:18px;color:#0b6c72}
+.pv-center-case-notes span{padding:14px;background:#fff;border-left:4px solid #36a6a3;color:#315c61;font-size:14px;line-height:1.55}
+
+.closing-inner{width:min(1360px,88vw);padding:6vh 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,320px);gap:34px;align-items:center}
+.closing-copy{min-width:0}
+.closing-thumbnail-wrap{margin:0;padding:10px;background:rgba(255,255,255,.08);border:1px solid rgba(150,230,235,.55);box-shadow:0 12px 28px rgba(0,0,0,.18)}
+.closing-thumbnail{display:block;position:static;width:100%;height:190px;object-fit:cover;opacity:1;border:0}
+.closing-thumbnail-wrap figcaption{margin-top:8px;color:#b9d8dd;font-size:11px;text-align:center}
+
+@media(max-width:1000px){
+  .slide.analysis-static-redesign.active,.slide.traffic-static-redesign.active{display:block!important;padding:88px 22px 24px!important}
+  .analysis-static-redesign .analysis-interactive,.traffic-static-redesign .analysis-interactive{height:calc(100vh - 270px);min-height:300px}
+  .analysis-static-redesign .analysis-focus-note,.traffic-static-redesign .traffic-note{grid-template-columns:repeat(2,1fr);margin-top:8px}
+  .cost-redesign .cost-layout{grid-template-columns:1fr}
+  .cost-redesign .cost-controls{grid-template-columns:1fr}
+  .cost-redesign .cost-bars{grid-template-columns:1fr}
+  .pv-center-case-layout{grid-template-columns:1fr}
+  .pv-center-case-layout figure img{height:42vh;min-height:220px}
+  .closing-inner{grid-template-columns:1fr;gap:18px}
+  .closing-thumbnail-wrap{max-width:320px}
+}
+
+/* Final viewport fit after browser review. */
+.analysis-static-redesign .analysis-interactive,.traffic-static-redesign .analysis-interactive{height:calc(100vh - 240px);min-height:400px}
+.cost-redesign .cost-total>span{font-size:12px}
+.cost-redesign .cost-total strong{font-size:38px;margin:2px 0}
+.cost-redesign .cost-total small{font-size:10px}
+.cost-redesign .cost-detail{font-size:9px;line-height:1.15;max-height:28px;overflow:hidden;margin:2px 0}
+.cost-redesign .cost-bars{margin-top:5px}
+.cost-redesign .bar{font-size:9px;line-height:1.05}
+
+/* Put all investment bars beside the headline so every listed amount stays in the viewport. */
+.cost-redesign .cost-total{display:grid;grid-template-columns:190px minmax(0,1fr);grid-template-areas:"label bars" "value bars" "unit bars" "detail bars";column-gap:12px;align-items:start}
+.cost-redesign .cost-total>span{grid-area:label}
+.cost-redesign .cost-total>strong{grid-area:value}
+.cost-redesign .cost-total>small{grid-area:unit}
+.cost-redesign .cost-total>.cost-detail{grid-area:detail}
+.cost-redesign .cost-total>.cost-bars{grid-area:bars;margin-top:0;align-self:start}
+.cost-redesign .cost-bars{grid-template-columns:repeat(2,minmax(0,1fr));gap:3px}
+.cost-redesign .bar{grid-template-columns:minmax(0,1fr) 28px 58px;font-size:8px;gap:3px}
+.cost-redesign .bar i{height:7px}
+@media(max-width:1000px){.cost-redesign .cost-total{display:block}.cost-redesign .cost-total>.cost-bars{margin-top:5px}}
+
+/* Repair pass 20261019-4: make page 13 use the same full-bleed image treatment as page 7. */
+.slide.concept-redesign.active{display:flex!important;flex-direction:column;padding:58px 0 0!important;background:#061522!important}
+.concept-redesign .section-head{display:none}
+.concept-redesign .scheme2-concept-crop{width:100%;height:calc(100vh - 58px);max-height:none;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#061522}
+.concept-redesign .scheme2-concept-crop img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:#061522}
+.concept-redesign .small-note{display:none}
+
+/* Preserve the wide source drawing while making it span the full slide width. */
+.concept-redesign .scheme2-concept-crop{align-items:flex-start}
+.concept-redesign .scheme2-concept-crop img{width:100%;height:auto;max-height:none;object-fit:contain}
+
+.concept-redesign,.concept-redesign .scheme2-concept-crop{background:#fff!important}
+
+/* Confirmed 35-page revision: purple independent zoom frames for page 30. */
+.measure-zoom-frame{border:0;background:transparent;padding:0;cursor:zoom-in}
+.measure-zoom-frame img{cursor:zoom-in}
+.measure-redesign .measure-card:first-child .pv-center-zoom-frame{height:16vh;min-height:92px;display:flex;align-items:stretch}
+.measure-redesign .measure-card:first-child .pv-center-zoom-frame img{width:100%;height:100%;object-fit:cover}
+.measure-redesign .measure-card:nth-child(2) .swap-zoom-frame{display:block}
+.measure-redesign .measure-card:nth-child(2) .swap-zoom-frame .measure-images{border:0;padding:0}
+
+/* Restore readable page 34 layout; move only the right cost summary upward. */
+.cost-redesign .cost-layout{grid-template-columns:minmax(0,1.18fr) minmax(360px,.82fr);gap:18px;max-height:calc(100vh - 310px);overflow:auto;padding-right:6px}
+.cost-redesign .cost-controls{display:grid;grid-template-columns:1fr;gap:8px}
+.cost-redesign .cost-row{grid-template-columns:155px minmax(120px,1fr) 92px;gap:9px;align-items:center}
+.cost-redesign .cost-row label{font-size:12px;line-height:1.2}
+.cost-redesign .cost-row small{font-size:9px;line-height:1.2}
+.cost-redesign .cost-row input[type=range]{height:18px}
+.cost-redesign .cost-row output{font-size:12px}
+.cost-redesign .cost-total{display:block;position:relative;top:-22px;border-left:1px solid #2c5c71;padding-left:18px}
+.cost-redesign .cost-total>span{font-size:13px}
+.cost-redesign .cost-total strong{font-size:48px;margin:6px 0}
+.cost-redesign .cost-total small{font-size:12px}
+.cost-redesign .cost-detail{font-size:12px;line-height:1.5;max-height:none;overflow:visible;margin:6px 0}
+.cost-redesign .cost-bars{display:grid;grid-template-columns:1fr;gap:8px;margin-top:14px}
+.cost-redesign .bar{grid-template-columns:150px 1fr 90px;gap:8px;font-size:12px}
+.cost-redesign .bar i{height:12px}
+
+/* The final slide keeps the text layout after removing the thumbnail. */
+.closing-inner{grid-template-columns:1fr!important;max-width:1080px}
+.closing-thumbnail-wrap{display:none!important}
+
+/* Page 33: remove the highlighted reset hint and reclaim space for the summary. */
+.cost-redesign .cost-total{top:-74px!important}
+.cost-redesign .cost-layout{max-height:calc(100vh - 286px)!important}
+.cost-redesign .cost-scope-note{position:relative;z-index:3;margin-top:-34px!important;padding:8px 10px!important;background:#0b2034!important;line-height:1.35!important}
+
+/* Enlarge pages 22-23 high-security drawings to the page 21 reference scale. */
+.hs-plan-redesign,.hs-flow-redesign{grid-template-columns:minmax(0,1.8fr) minmax(220px,.6fr)!important;column-gap:16px}
+.hs-plan-redesign .hs-ppt-page,.hs-flow-redesign .hs-ppt-page{height:clamp(420px,calc(100vh - 260px),500px)!important;min-height:420px!important}
+.hs-plan-redesign .hs-ppt-page img,.hs-flow-redesign .hs-ppt-page img{width:100%;height:100%;object-fit:contain}
+
+
+/* Page 22-23: match the user's marked large drawing frame while preserving the full source image. */
+.hs-plan-redesign .hs-ppt-page,.hs-flow-redesign .hs-ppt-page{height:clamp(460px,calc(100vh - 260px),640px)!important;min-height:460px!important}
+.hs-plan-redesign .hs-ppt-page img,.hs-flow-redesign .hs-ppt-page img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important}
+
+/* Page 30: three left-card images open in a larger full-frame viewer; right swap images stay static. */
+.measure-redesign .measure-card:first-child .measure-pv-images img.zoomable-card{cursor:zoom-in}
+.measure-redesign .measure-card:nth-child(2) .measure-images img{cursor:default!important}
+.card-zoom-dialog{width:min(96vw,1600px)!important;height:min(92vh,900px)!important;max-width:96vw!important;max-height:92vh!important}
+.card-zoom-content{overflow:hidden!important}
+
