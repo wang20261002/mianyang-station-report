@@ -31,7 +31,7 @@
     const table=(heads,body)=>'<div class="metrics-table-wrap"><table class="economic-table"><thead><tr>'+heads.map(h=>'<th>'+h+'</th>').join('')+'</tr></thead><tbody>'+body+'</tbody></table></div>';
     const note=t=>'<div class="economic-note">'+t+'</div>';
     const metricRows=(m,isCustoms=false)=>[
-      ['净建设用地面积',f(m.land),'㎡',isCustoms?'北侧ACD内已建用地':'规划条件〔2024〕181号'],
+      ['净建设用地面积',f(m.land),'㎡',isCustoms?'北侧ACD内已建用地':'本轮调整口径，B地块扣减30亩'],
       ['建筑基底面积',f(m.base),'㎡',isCustoms?'已建指标':'方案控制值'],
       ['总建筑面积',f(m.gfa),'㎡',isCustoms?'已建指标':'含已确认配套增量'],
       ['计容建筑面积',f(m.far),'㎡','含双倍计容部分'],
@@ -49,7 +49,7 @@
       ['配套办公及倒班宿舍',['11','04','05','03'],''],['配套倒班宿舍',['06'],'二次改造酒店']
     ];
     const functions=table(['报规报建功能','建筑面积（㎡）','计容面积（㎡）','备注'],cat.map(([name,ids,n])=>{const rs=rows.filter(r=>ids.includes(r.id));return tr([name,f(sum(rs)),f(sum(rs,'far')),n])}).join('')+tr(['已建海关监管中心',f(customs.gfa),f(customs.far),'其中生活配套2,761.83㎡；监管仓库含双倍计容部分'])+tr(['合计',f(overall.gfa),f(overall.far),''],true));
-    const overallHtml=table(['整体指标','数值','单位','备注'],metricRows(overall))+'<h3>报规报建功能面积</h3>'+functions+note('用地按规划条件；建筑基底及密度按方案控制值；已建海关纳入整体统计。');
+    const overallHtml=table(['整体指标','数值','单位','备注'],metricRows(overall))+'<h3>报规报建功能面积</h3>'+functions+note('净用地按B地块扣减30亩后的范围核算；建筑基底及密度按方案控制值；已建海关纳入整体统计。');
     const partFunctions=(rs,old=false)=>table(['功能','建筑面积（㎡）','计容面积（㎡）','备注'],cat.flatMap(([name,ids,n])=>{const matched=rs.filter(r=>ids.includes(r.id));return matched.length?[tr([name,f(sum(matched)),f(sum(matched,'far')),n])]:[]}).join('')+(old?tr(['已建海关监管中心',f(customs.gfa),f(customs.far),'含生活配套2,761.83㎡；详见海关中心子表']):''));
     const zoneHtml='<h3>南侧B地块</h3>'+table(['指标','数值','单位','备注'],metricRows(south))+partFunctions(southRows)+'<h3>北侧ACD地块（含海关中心）</h3>'+table(['指标','数值','单位','备注'],metricRows(north))+partFunctions(northRows,true)+note('北侧ACD：新增建设用地52,841.12㎡＋海关中心19,583.79㎡；新增建筑43,297.08㎡＋海关中心4,606.00㎡。')+'<h3>已建海关监管中心（北侧ACD子项）</h3>'+table(['指标','数值','单位','备注'],metricRows({...customs,livingGfa:customs.livingGfa},true)+tr(['地上建筑面积',f(customs.above),'㎡',''])+tr(['地下建筑面积',f(customs.underground),'㎡','设备用房，不计容'])+tr(['生活配套用地占比','5.81','%','海关中心用地口径'])+tr(['配套设施建筑容积率','2.43','','海关原指标']))+note('海关中心为北侧ACD的已建子项，不与北侧ACD重复求和。生活配套建筑2,761.83㎡为原指标中的功能分类子项，不与建筑单体面积相加。新增生活配套用地按总用地7%控制，独立用地边界以报建总图核量为准。');
     const doubleHtml=table(['所属地块','模型编号／功能','实际建筑面积（㎡）','计容方式','计容面积（㎡）','增计面积（㎡）'],doubles.map(r=>tr([northRows.includes(r)?'北侧ACD':'南侧B',r.id+'／'+r.name,f(r.gfa),'×2',f(r.far),f(r.far-r.gfa)])).join('')+tr(['新增建筑小计','',f(sum(doubles)),'',f(sum(doubles,'far')),f(sum(doubles,'far')-sum(doubles))],true)+tr(['北侧ACD·海关中心','E1a／监管仓库','2,160.71','部分×2','2,957.13','796.42'])+tr(['合计','',f(sum(doubles)+2160.71),'',f(sum(doubles,'far')+2957.13),f(sum(doubles,'far')-sum(doubles)+796.42)],true))+note('双倍计容增加的面积仅计入计容建筑面积，不增加实际建筑面积及工程计价面积。海关监管仓库按已建指标：建筑面积2,160.71㎡、计容面积2,957.13㎡，增计796.42㎡；海关其他单体按原核定计容值统计。');
