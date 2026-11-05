@@ -24,7 +24,7 @@
   window.renderProjectMetrics=()=>{
     const el=document.querySelector('[data-title="综合经济技术指标"]');
     el.classList.add('economic-slide');
-    el.querySelector('h2').textContent='方案二综合经济技术指标';
+    el.querySelector('h2').textContent='综合经济技术指标';
     el.querySelector('.section-head p:not(.eyebrow)').textContent='南侧B＋北侧ACD（含已建海关监管中心）｜整体、分区、双倍计容及建筑明细';
     el.querySelectorAll('.economic-tabs,.economic-panel').forEach(x=>x.remove());
     const tr=(cs,total=false)=>'<tr'+(total?' class="economic-total"':'')+'>'+cs.map(c=>'<td>'+c+'</td>').join('')+'</tr>';
